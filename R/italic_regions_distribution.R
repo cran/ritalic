@@ -1,0 +1,62 @@
+#' Get distribution of lichen taxa in Italy
+#'
+#' @description
+#' Retrieves presence/absence data (1/0) for lichen taxa across all the Italian administrative regions. Only accepts
+#' accepted names from the ITALIC database.
+#'
+#' Only accepts names that exist in the database of ITALIC.
+#'
+#' @note Before using this function with a list of names, first obtain their accepted names
+#'       using `italic_match()`.
+#'       Example workflow:
+#'       names_matched <- italic_match(your_names)
+#'       distribution <- italic_distribution(names_matched$accepted_name)
+#'
+#' @param sp_names Character vector of accepted names from ITALIC database
+#'
+#' @return A data frame with columns:
+#'   \describe{
+#'     \item{scientific_name}{Scientific name}
+#'     \item{abruzzo}{Presence (1) or absence (0) in Abruzzo}
+#'     \item{basilicata}{Presence (1) or absence (0) in Basilicata}
+#'     \item{calabria}{Presence (1) or absence (0) in Calabria}
+#'     \item{campania}{Presence (1) or absence (0) in Campania}
+#'     \item{emilia_romagna}{Presence (1) or absence (0) in Emilia Romagna}
+#'     \item{friuli_venezia_giulia}{Presence (1) or absence (0) in Friuli Venezia-Giulia}
+#'     \item{lazio}{Presence (1) or absence (0) in Lazio}
+#'     \item{liguria}{Presence (1) or absence (0) in Liguria}
+#'     \item{lombardia}{Presence (1) or absence (0) in Lombardia}
+#'     \item{marche}{Presence (1) or absence (0) in Marche}
+#'     \item{molise}{Presence (1) or absence (0) in Molise}
+#'     \item{piemonte}{Presence (1) or absence (0) in Piemonte}
+#'     \item{puglia}{Presence (1) or absence (0) in Puglia}
+#'     \item{sardegna}{Presence (1) or absence (0) in Sardegna}
+#'     \item{sicilia}{Presence (1) or absence (0) in Sicilia}
+#'     \item{toscana}{Presence (1) or absence (0) in Toscana}
+#'     \item{trentino_alto_adige}{Presence (1) or absence (0) in Trentino Alto-Adige}
+#'     \item{umbria}{Presence (1) or absence (0) in Umbria}
+#'     \item{valle_d_aosta}{Presence (1) or absence (0) in Valle d'Aosta}
+#'     \item{veneto}{Presence (1) or absence (0) in Veneto}
+#'   }
+#'
+#' @examples
+#' \dontrun{
+#' # First match names
+#' matched <- italic_match("Cetraria islandica")
+#' # Then get distribution in administrative regions
+#' italic_regions_distribution(matched$accepted_name)
+#' }
+#'
+#' @export
+italic_regions_distribution <- function(sp_names) {
+  data <-
+    call_api_base(
+      sp_names,
+      "https://italic.units.it/api/v1/regions-distribution/",
+      "Retrieving distribution in regions...",
+      parse_function = parse_api_response,
+      request_method = "GET",
+      reorder_result = TRUE
+    )
+  return(data)
+}
