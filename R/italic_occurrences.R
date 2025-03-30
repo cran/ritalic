@@ -7,8 +7,10 @@
 #' @note Before using this function with a list of names, first obtain their accepted names
 #'       using `italic_match()`.
 #'       Example workflow:
+#'       \preformatted{
 #'       names_matched <- italic_match(your_names)
 #'       occ <- italic_occurrences(names_matched$accepted_name)
+#'       }
 #'
 #' @param sp_names Character vector of accepted names
 #' @param result_data Character string specifying output detail level:
@@ -16,7 +18,7 @@
 #'
 #' @return A data frame with occurrence records. Column names follow the Darwin Core standard, with the additional column substratum, which is particularly relevant for lichens. For simple output:
 #'   \describe{
-#'     \item{scientificName}{Full scientific name}
+#'     \item{scientificName}{The scientific name provided as input}
 #'     \item{decimalLatitude}{Latitude in decimal degrees}
 #'     \item{decimalLongitude}{Longitude in decimal degrees}
 #'     \item{coordinatesUncertaintyInMeters}{Spatial uncertainty of the coordinates}
@@ -38,10 +40,13 @@
 #' @examples
 #' \dontrun{
 #' # Get simple occurrence data
-#' occ <- italic_occurrences("Cetraria ericetorum Opiz")
+#' italic_occurrences("Cetraria ericetorum Opiz")
 #'
 #' # Get extended occurrence data
 #' occ_ext <- italic_occurrences("Cetraria ericetorum Opiz", result_data = "extended")
+#' 
+#' # Then get citations for the retrieved occurrences
+#' italic_occurrences_references(occ_ext)
 #' }
 #'
 #' @references

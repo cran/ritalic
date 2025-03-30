@@ -1,18 +1,20 @@
 #' Generate interactive identification keys for lichen taxa
 #'
 #' @description
-#' Creates a custom interactive dichotomous key for identifying the specified lichen taxa using
+#' Creates a URL link to a custom interactive dichotomous key for identifying the specified lichen taxa using
 #' the KeyMaker system of ITALIC. Only accepts names that exist in the database of ITALIC.
 #'
 #' @note Before using this function with a list of names, first obtain their accepted names
 #'       using `italic_match()`.
 #'       Example workflow:
+#'       \preformatted{
 #'       names_matched <- italic_match(your_names)
 #'       key_url <- italic_identification_key(names_matched$accepted_name)
+#'       }
 #'
 #' @param sp_names Character vector of accepted names
 #'
-#' @return Character string containing URL to a web-based interactive identification key.
+#' @return Character string containing the URL to a web-based interactive identification key.
 #'        The key is uniquely generated for the input taxa and allows step-by-step
 #'        identification through dichotomous choices.
 #'
@@ -61,7 +63,7 @@ italic_identification_key <- function(sp_names) {
       paste(
         'https://italic.units.it/key-maker/',
         unique_id,
-        '/nodes/1/species',
+        '/nodes/1/interactive',
         sep = ''
       )
     )

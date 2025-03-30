@@ -10,20 +10,23 @@ italic_traits_pa(sp_names)
 \item{sp_names}{A vector containing scientific names of lichens.}
 }
 \value{
-A dataframe containing the ecology of the lichen species passed as input.
+A dataframe containing a series of traits for the lichen species passed as input.
 }
 \description{
-This function returns the functional traits of the lichen species passed as input.
+This function returns morphological traits of the lichen species passed as input.
 Only accepts names that exist in the database of ITALIC.
 }
 \note{
 Before using this function with a list of names, first obtain their accepted names
 using \code{italic_match()}.
 Example workflow:
-names_matched <- italic_match(your_names)
-descriptions <- italic_taits_pa(names_matched$accepted_name)
+\preformatted{
+      names_matched <- italic_match(your_names)
+      traits <- italic_taits_pa(names_matched$accepted_name)
+      }
 }
 \examples{
+\dontrun{
 italic_traits_pa("Cetraria ericetorum Opiz")
-
+}
 }

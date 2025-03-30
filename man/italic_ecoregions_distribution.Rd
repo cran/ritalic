@@ -15,7 +15,7 @@ commonness/rarity categories, "presence-absence" returns only values for presenc
 \value{
 A data frame with:
 \describe{
-\item{scientific_name}{Scientific name with authorities}
+\item{scientific_name}{The scientific name provided as input}
 \item{alpine}{Status in alpine belt (extremely common to absent)}
 \item{subalpine}{Status in subalpine belt (extremely common to absent)}
 \item{oromediterranean}{Status in oromediterranean belt (extremely common to absent)}
@@ -37,20 +37,24 @@ ecoregions. Only accepts names that exist in the database of ITALIC.
 Before using this function with a list of names, first obtain their accepted names
 using \code{italic_match()}.
 Example workflow:
-names_matched <- italic_match(your_names)
-ecoregions_distribution <- italic_ecoregions_distribution(names_matched$accepted_name)
+\preformatted{
+      names_matched <- italic_match(your_names)
+      ecoregions_distribution <- italic_ecoregions_distribution(names_matched$accepted_name)
+      }
 }
 \examples{
 \dontrun{
 # Get commonness/rarity categories
-ecodist <- italic_ecoregions_distribution("Cetraria ericetorum Opiz")
+italic_ecoregions_distribution("Cetraria ericetorum Opiz")
 
 # Get presence/absence data
-edist <- italic_ecoregions_distribution("Cetraria ericetorum Opiz", "presence-absence")
+italic_ecoregions_distribution("Cetraria ericetorum Opiz", result_data="presence-absence")
 }
 
 }
 \references{
-ITALIC - The Information System on Italian Lichens: ecoregions distribution
+For more information about Italian ecoregions see ITALIC ecoregions distribution
 \url{https://italic.units.it/?procedure=base&t=59&c=60#commonness}
+and the scientific publication describing the ecoregions
+\url{https://www.mdpi.com/1424-2818/12/8/294}
 }

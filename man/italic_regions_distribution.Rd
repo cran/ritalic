@@ -12,7 +12,7 @@ italic_regions_distribution(sp_names)
 \value{
 A data frame with columns:
 \describe{
-\item{scientific_name}{Scientific name}
+\item{scientific_name}{The scientific name provided as input}
 \item{abruzzo}{Presence (1) or absence (0) in Abruzzo}
 \item{basilicata}{Presence (1) or absence (0) in Basilicata}
 \item{calabria}{Presence (1) or absence (0) in Calabria}
@@ -45,8 +45,10 @@ Only accepts names that exist in the database of ITALIC.
 Before using this function with a list of names, first obtain their accepted names
 using \code{italic_match()}.
 Example workflow:
-names_matched <- italic_match(your_names)
-distribution <- italic_distribution(names_matched$accepted_name)
+\preformatted{
+      names_matched <- italic_match(your_names)
+      distribution <- italic_regions_distribution(names_matched$accepted_name)
+      }
 }
 \examples{
 \dontrun{

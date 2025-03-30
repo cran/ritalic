@@ -7,14 +7,16 @@
 #' @note Before using this function with a list of names, first obtain their accepted names
 #'       using `italic_match()`.
 #'       Example workflow:
+#'       \preformatted{
 #'       names_matched <- italic_match(your_names)
 #'       data <- italic_ecology_traits(names_matched$accepted_name)
+#'       }
 #'
 #' @param sp_names Character vector of accepted names
 #'
 #' @return A data frame with:
 #'   \describe{
-#'     \item{scientific_name}{Scientific name}
+#'     \item{scientific_name}{The scientific name provided as input}
 #'     \item{substrata}{Substrate}
 #'     \item{photobiont}{Type of photosynthetic partner}
 #'     \item{growth_form}{Growth form}
@@ -37,7 +39,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' traits <- italic_ecology_traits("Cetraria islandica (L.) Ach. subsp. islandica")
+#' italic_ecology_traits("Cetraria islandica (L.) Ach. subsp. islandica")
 #' }
 #'
 #' @references

@@ -12,7 +12,7 @@ italic_ecology_traits(sp_names)
 \value{
 A data frame with:
 \describe{
-\item{scientific_name}{Scientific name}
+\item{scientific_name}{The scientific name provided as input}
 \item{substrata}{Substrate}
 \item{photobiont}{Type of photosynthetic partner}
 \item{growth_form}{Growth form}
@@ -41,12 +41,14 @@ and poleotolerance data for lichen taxa. Only accepts names that exist in the da
 Before using this function with a list of names, first obtain their accepted names
 using \code{italic_match()}.
 Example workflow:
-names_matched <- italic_match(your_names)
-data <- italic_ecology_traits(names_matched$accepted_name)
+\preformatted{
+      names_matched <- italic_match(your_names)
+      data <- italic_ecology_traits(names_matched$accepted_name)
+      }
 }
 \examples{
 \dontrun{
-traits <- italic_ecology_traits("Cetraria islandica (L.) Ach. subsp. islandica")
+italic_ecology_traits("Cetraria islandica (L.) Ach. subsp. islandica")
 }
 
 }

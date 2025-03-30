@@ -4,6 +4,14 @@
 # ritalic
 
 <!-- badges: start -->
+
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![cran
+checks](https://badges.cranchecks.info/worst/ritalic.svg)](https://cran.r-project.org/web/checks/check_results_ritalic.html)
+[![cran
+version](https://www.r-pkg.org/badges/version/ritalic)](https://cran.r-project.org/package=ritalic)
 <!-- badges: end -->
 
 **ritalic** is an R package which gives you access to
@@ -24,7 +32,10 @@ You can either install the stable relase of ritalic using the version
 available on CRAN:
 
 ``` r
-# coming soon
+# install ritalic
+install.packages("ritalic")
+# load ritalic
+library(ritalic)
 ```
 
 Or you can install the development version of the package from
@@ -46,7 +57,7 @@ library(ritalic)
 ## Usage
 
 Italic has a guide designed to help users: [function and
-examples](https://italic.units.it/ritalic-basic/)
+examples](https://italic.units.it/ritalic/)
 
 ## Citation
 

@@ -10,20 +10,22 @@ italic_identification_key(sp_names)
 \item{sp_names}{Character vector of accepted names}
 }
 \value{
-Character string containing URL to a web-based interactive identification key.
+Character string containing the URL to a web-based interactive identification key.
 The key is uniquely generated for the input taxa and allows step-by-step
 identification through dichotomous choices.
 }
 \description{
-Creates a custom interactive dichotomous key for identifying the specified lichen taxa using
+Creates a URL link to a custom interactive dichotomous key for identifying the specified lichen taxa using
 the KeyMaker system of ITALIC. Only accepts names that exist in the database of ITALIC.
 }
 \note{
 Before using this function with a list of names, first obtain their accepted names
 using \code{italic_match()}.
 Example workflow:
-names_matched <- italic_match(your_names)
-key_url <- italic_identification_key(names_matched$accepted_name)
+\preformatted{
+      names_matched <- italic_match(your_names)
+      key_url <- italic_identification_key(names_matched$accepted_name)
+      }
 }
 \examples{
 \dontrun{
