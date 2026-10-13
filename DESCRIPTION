@@ -1,6 +1,6 @@
 Package: ritalic
 Title: Interface to the ITALIC Database of Lichen Biodiversity
-Version: 0.13.0
+Version: 0.13.1
 Authors@R: c(
     person("Matteo", "Conti", email="matt.ciao@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0003-4917-2639")),
@@ -30,7 +30,7 @@ Depends: R (>= 3.5.3)
 Imports: httr2 (>= 1.1.0), jsonlite, utils, sf, ggplot2
 Config/roxygen2/version: 8.1.1
 NeedsCompilation: no
-Packaged: 2026-10-12 11:18:23 UTC; matteoconti
+Packaged: 2026-10-13 07:17:27 UTC; matteoconti
 Author: Matteo Conti [aut, cre] (ORCID:
     <https://orcid.org/0009-0003-4917-2639>),
   Luana Francesconi [aut],
@@ -42,4 +42,4 @@ Author: Matteo Conti [aut, cre] (ORCID:
   Pier Luigi Nimis [aut],
   Stefano Martellos [aut]
 Repository: CRAN
-Date/Publication: 2026-10-12 15:20:02 UTC
+Date/Publication: 2026-10-13 08:30:02 UTC
